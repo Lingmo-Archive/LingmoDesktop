@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Main.qml</file>
+        <file>qml/GlobalSettings.qml</file>
+        <file>qml/Wallpaper.qml</file>
+        <file>qml/FolderGridView.qml</file>
+        <file>qml/FolderGridItem.qml</file>
+    </qresource>
+</RCC>
