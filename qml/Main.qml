@@ -63,18 +63,18 @@ Item {
         focus: true
         model: dirModel
 
-        // Label {
-        //     text: qsTr("******\n*[CuteOS内部测试]* \n*[版本: 23.05.1]| \n*[https://www.cuteos.cn]|")
-        //     Layout.fillWidth: true
-        //     wrapMode: Text.Wrap
-        //     color: "#FFFFFF"
-        //     width: parent.width
-        //     height: parent.height
-        //     font.pixelSize: 20
-        //     font.bold: true
-        //     verticalAlignment: Text.AlignButton
-        //     horizontalAlignment: Text.AlignRight
-        // }
+        Label {
+            text: qsTr("******\n*[Swift OS Dev]* \n*[版本: 6.05.1]| \n*[https://swifts.org.cn]|")
+            Layout.fillWidth: true
+            wrapMode: Text.Wrap
+            color: "#FFFFFF"
+            width: parent.width
+            height: parent.height
+            font.pixelSize: 20
+            font.bold: true
+            verticalAlignment: Text.AlignButton
+            horizontalAlignment: Text.AlignRight
+        }
 
         ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
