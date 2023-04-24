@@ -1,3 +1,9 @@
+cute-desktop (6.05.1) UNRELEASED; urgency=high
+
+  * Initial release (CuteOS)  <cuteos@foxmail.com>
+
+ -- CuteOS Packaging Team <cuteos@foxmail.com>  Mon, 25 Apr 2023 01:04:24+0800
+
 cute-desktop (0.8-1) UNRELEASED; urgency=high
 
   * Initial release (CuteOS)  <support@cuteos.com>
