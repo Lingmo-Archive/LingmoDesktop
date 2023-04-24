@@ -37,7 +37,7 @@ ThumbnailCache *ThumbnailCache::self()
         SELF = new ThumbnailCache;
     }
 
-    return SELF;
+    return SELF;//
 }
 
 ThumbnailCache::ThumbnailCache(QObject *parent)
