@@ -46,7 +46,6 @@ target_link_libraries(cute-desktop
   KF5::WindowSystem
   KF5::ConfigCore
 
-  # CuteUI
 )
 
 file(GLOB TS_FILES translations/*.ts)
