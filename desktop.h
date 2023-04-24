@@ -41,6 +41,6 @@ private slots:
 
 private:
     QMap<QScreen *, DesktopView *> m_list;
-};
+};//
 
 #endif // DESKTOP_H
