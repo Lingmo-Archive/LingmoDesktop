@@ -12,14 +12,14 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Core DBus Quick LinguistTools REQUIRED)
-# find_package(CuteUI REQUIRED)
+# find_package(LingmoUI REQUIRED)
 
 find_package(KF5KIO)
 find_package(KF5Solid)
 find_package(KF5WindowSystem)
 find_package(KF5Config)
 
-add_executable(cute-desktop
+add_executable(ling-desktop
   main.cpp
   desktop.cpp
 
@@ -33,7 +33,7 @@ add_executable(cute-desktop
   ${DBUS_SOURCES}
 )
 
-target_link_libraries(cute-desktop
+target_link_libraries(ling-desktop
   PRIVATE
   Qt5::Core
   Qt5::DBus
@@ -46,13 +46,12 @@ target_link_libraries(cute-desktop
   KF5::WindowSystem
   KF5::ConfigCore
 
-  # CuteUI
 )
 
 file(GLOB TS_FILES translations/*.ts)
 qt5_create_translation(QM_FILES ${TS_FILES})
 add_custom_target(translations DEPENDS ${QM_FILES} SOURCES ${TS_FILES})
-add_dependencies(cute-desktop translations)
+add_dependencies(ling-desktop translations)
 
-install(TARGETS cute-desktop RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-install(FILES ${QM_FILES} DESTINATION /usr/share/cute-desktop/translations)
+install(TARGETS ling-desktop RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(FILES ${QM_FILES} DESTINATION /usr/share/ling-desktop/translations)

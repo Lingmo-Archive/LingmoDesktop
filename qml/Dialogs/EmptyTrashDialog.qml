@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -21,10 +21,10 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
-import CuteUI 1.0 as CuteUI
-import Cute.FileManager 1.0
+import LingmoUI 1.0 as LingmoUI
+import Lingmo.FileManager 1.0
 
-CuteUI.Window {
+LingmoUI.Window {
     id: control
 
     title: qsTr("File Manager")
@@ -32,8 +32,8 @@ CuteUI.Window {
     minimizeButtonVisible: false
     visible: true
 
-    property int contentWidth: 300 + CuteUI.Units.largeSpacing * 2
-    property int contentHeight: _mainLayout.implicitHeight + control.header.height + CuteUI.Units.largeSpacing
+    property int contentWidth: 300 + LingmoUI.Units.largeSpacing * 2
+    property int contentHeight: _mainLayout.implicitHeight + control.header.height + LingmoUI.Units.largeSpacing
 
     width: contentWidth
     height: contentHeight
@@ -46,7 +46,7 @@ CuteUI.Window {
     maximumWidth: contentWidth
     maximumHeight: contentHeight
 
-    headerBackground.color: CuteUI.Theme.secondBackgroundColor
+    headerBackground.color: LingmoUI.Theme.secondBackgroundColor
 
     DragHandler {
         target: null
@@ -61,17 +61,17 @@ CuteUI.Window {
 
     Rectangle {
         anchors.fill: parent
-        color: CuteUI.Theme.secondBackgroundColor
+        color: LingmoUI.Theme.secondBackgroundColor
     }
 
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
         anchors.topMargin: 0
-        anchors.leftMargin: CuteUI.Units.largeSpacing
-        anchors.rightMargin: CuteUI.Units.largeSpacing
-        anchors.bottomMargin: CuteUI.Units.largeSpacing
-        spacing: CuteUI.Units.largeSpacing
+        anchors.leftMargin: LingmoUI.Units.largeSpacing
+        anchors.rightMargin: LingmoUI.Units.largeSpacing
+        anchors.bottomMargin: LingmoUI.Units.largeSpacing
+        spacing: LingmoUI.Units.largeSpacing
 
         Label {
             text: qsTr("Do you want to permanently delete all files from the Trash?")
@@ -80,7 +80,7 @@ CuteUI.Window {
         }
 
         RowLayout {
-            spacing: CuteUI.Units.largeSpacing
+            spacing: LingmoUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

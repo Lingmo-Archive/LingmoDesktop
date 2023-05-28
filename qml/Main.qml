@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 CuteOS Team.
+ * Copyright (C) 2023 LingmoOS Team.
  */
 
 import QtQuick 2.12
@@ -8,8 +8,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Window 2.12
 import QtGraphicalEffects 1.0
 
-import Cute.FileManager 1.0 as FM
-import CuteUI 1.0 as CuteUI
+import Lingmo.FileManager 1.0 as FM
+import LingmoUI 1.0 as LingmoUI
 import "./"
 
 Item {
@@ -63,18 +63,19 @@ Item {
         focus: true
         model: dirModel
 
-        Label {
-            text: qsTr("******\n*[Swift OS Dev]* \n*[版本: 6.05.1]| \n*[https://swifts.org.cn]|")
-            Layout.fillWidth: true
-            wrapMode: Text.Wrap
-            color: "#FFFFFF"
-            width: parent.width
-            height: parent.height
-            font.pixelSize: 20
-            font.bold: true
-            verticalAlignment: Text.AlignButton
-            horizontalAlignment: Text.AlignRight
-        }
+        // Label {
+        //     text: qsTr("-\nSwift GNU/Linux \nOS Type: GNU/Linux  \nType: Beta  \nhttps://swifts.org.cn \nhttps://bbs.swifts.org.cn \nhttps://gitee.com/open-swift")
+        //     Layout.fillWidth: true
+        //     wrapMode: Text.Wrap
+        //     color: "#FFFFFF"
+        //     width: parent.width
+        //     height: parent.height
+        //     font.pixelSize: 20
+        //     font.bold: false
+        //     font.family: "Ubuntu"
+        //     verticalAlignment: Text.AlignButton
+        //     horizontalAlignment: Text.AlignRight
+        // }
 
         ScrollBar.vertical.policy: ScrollBar.AlwaysOff
 
@@ -157,7 +158,7 @@ Item {
             width: 0
             height: 0
             z: 99999
-            color: CuteUI.Theme.highlightColor
+            color: LingmoUI.Theme.highlightColor
 
             function close() {
                 opacityAnimation.restart()

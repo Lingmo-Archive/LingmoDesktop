@@ -4,8 +4,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Window 2.12
 import QtGraphicalEffects 1.0
 
-import Cute.Desktop 1.0 as DK
-import CuteUI 1.0 as CuteUI
+import Lingmo.Desktop 1.0 as DK
+import LingmoUI 1.0 as LingmoUI
 
 Item {
     id: control
@@ -51,7 +51,7 @@ Item {
                 anchors.fill: parent
                 source: parent
                 color: "#000000"
-                opacity: CuteUI.Theme.darkMode && settings.dimsWallpaper ? 0.4 : 0.0
+                opacity: LingmoUI.Theme.darkMode && settings.dimsWallpaper ? 0.4 : 0.0
 
                 Behavior on opacity {
                     NumberAnimation {

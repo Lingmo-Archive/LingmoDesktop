@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
  *
@@ -41,6 +41,6 @@ private slots:
 
 private:
     QMap<QScreen *, DesktopView *> m_list;
-};
+};//
 
 #endif // DESKTOP_H

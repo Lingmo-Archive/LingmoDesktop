@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -24,13 +24,13 @@
 
 DesktopSettings::DesktopSettings(QObject *parent)
     : QObject(parent)
-    , m_interface("com.cute.Settings",
-                  "/Theme", "com.cute.Theme",
+    , m_interface("com.lingmo.Settings",
+                  "/Theme", "com.lingmo.Theme",
                   QDBusConnection::sessionBus(), this)
 {
     QDBusServiceWatcher *watcher = new QDBusServiceWatcher(this);
     watcher->setConnection(QDBusConnection::sessionBus());
-    watcher->addWatchedService("com.cute.Settings");
+    watcher->addWatchedService("com.lingmo.Settings");
     connect(watcher, &QDBusServiceWatcher::serviceRegistered, this, &DesktopSettings::init);
     init();
 }

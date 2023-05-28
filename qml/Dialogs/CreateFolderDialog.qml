@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -20,7 +20,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
-import CuteUI 1.0 as CuteUI
+import LingmoUI 1.0 as LingmoUI
 
 Window {
     id: control
@@ -29,8 +29,8 @@ Window {
     flags: Qt.Dialog
     visible: true
 
-    width: 400 + CuteUI.Units.largeSpacing * 2
-    height: _mainLayout.implicitHeight + CuteUI.Units.largeSpacing * 2
+    width: 400 + LingmoUI.Units.largeSpacing * 2
+    height: _mainLayout.implicitHeight + LingmoUI.Units.largeSpacing * 2
 
     minimumWidth: width
     minimumHeight: height
@@ -39,16 +39,16 @@ Window {
 
     Rectangle {
         anchors.fill: parent
-        color: CuteUI.Theme.secondBackgroundColor
+        color: LingmoUI.Theme.secondBackgroundColor
     }
 
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
-        anchors.margins: CuteUI.Units.largeSpacing
-        spacing: CuteUI.Units.largeSpacing
+        anchors.margins: LingmoUI.Units.largeSpacing
+        spacing: LingmoUI.Units.largeSpacing
 
-        CuteUI.ActionTextField {
+        LingmoUI.ActionTextField {
             id: _textField
             Layout.fillWidth: true
             Keys.onEscapePressed: control.close()
@@ -75,7 +75,7 @@ Window {
         }
 
         RowLayout {
-            spacing: CuteUI.Units.largeSpacing
+            spacing: LingmoUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

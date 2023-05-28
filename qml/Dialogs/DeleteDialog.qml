@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
  *
@@ -21,10 +21,10 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
-import CuteUI 1.0 as CuteUI
-import Cute.FileManager 1.0
+import LingmoUI 1.0 as LingmoUI
+import Lingmo.FileManager 1.0
 
-CuteUI.Window {
+LingmoUI.Window {
     id: control
 
     flags: Qt.Dialog | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint
@@ -39,18 +39,18 @@ CuteUI.Window {
     maximumWidth: contentWidth
     maximumHeight: contentHeight
 
-    property var contentWidth: _mainLayout.implicitWidth + CuteUI.Units.largeSpacing * 2
-    property var contentHeight: _mainLayout.implicitHeight + control.header.height + CuteUI.Units.largeSpacing * 2
+    property var contentWidth: _mainLayout.implicitWidth + LingmoUI.Units.largeSpacing * 2
+    property var contentHeight: _mainLayout.implicitHeight + control.header.height + LingmoUI.Units.largeSpacing * 2
 
-    background.color: CuteUI.Theme.secondBackgroundColor
+    background.color: LingmoUI.Theme.secondBackgroundColor
 
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
-        anchors.leftMargin: CuteUI.Units.largeSpacing
-        anchors.rightMargin: CuteUI.Units.largeSpacing
-        anchors.bottomMargin: CuteUI.Units.smallSpacing
-        spacing: CuteUI.Units.largeSpacing
+        anchors.leftMargin: LingmoUI.Units.largeSpacing
+        anchors.rightMargin: LingmoUI.Units.largeSpacing
+        anchors.bottomMargin: LingmoUI.Units.smallSpacing
+        spacing: LingmoUI.Units.largeSpacing
 
         Label {
             text: qsTr("Do you want to delete it permanently?")
@@ -59,7 +59,7 @@ CuteUI.Window {
         }
 
         RowLayout {
-            spacing: CuteUI.Units.largeSpacing
+            spacing: LingmoUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -22,8 +22,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 import QtGraphicalEffects 1.0
 
-import Cute.FileManager 1.0
-import CuteUI 1.0 as CuteUI
+import Lingmo.FileManager 1.0
+import LingmoUI 1.0 as LingmoUI
 
 Item {
     id: control
@@ -63,14 +63,14 @@ Item {
     Rectangle {
         id: _background
         width: Math.max(_iconItem.width, _label.paintedWidth)
-        height: _iconItem.height + _label.paintedHeight + CuteUI.Units.largeSpacing
+        height: _iconItem.height + _label.paintedHeight + LingmoUI.Units.largeSpacing
         x: (parent.width - width) / 2
         y: _iconItem.y
 
         // (Deprecated) Rectangle rounded corner.
-        //color: selected || hovered ? CuteUI.Theme.highlightColor : "transparent"
+        //color: selected || hovered ? LingmoUI.Theme.highlightColor : "transparent"
         color: "transparent"
-        // radius: CuteUI.Theme.mediumRadius
+        // radius: LingmoUI.Theme.mediumRadius
         // visible: selected || hovered
         // opacity: selected ? 1.0 : 0.2
     }
@@ -79,11 +79,11 @@ Item {
         id: _iconItem
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: CuteUI.Units.smallSpacing
-        anchors.bottomMargin: CuteUI.Units.smallSpacing
+        anchors.topMargin: LingmoUI.Units.smallSpacing
+        anchors.bottomMargin: LingmoUI.Units.smallSpacing
         z: 2
 
-        width: parent.width - CuteUI.Units.largeSpacing * 2
+        width: parent.width - LingmoUI.Units.largeSpacing * 2
         height: control.GridView.view.iconSize
 
         opacity: model.isHidden ? 0.5 : 1.0
@@ -103,9 +103,9 @@ Item {
         Image {
             id: _image
             anchors.fill: parent
-            anchors.topMargin: CuteUI.Units.smallSpacing
-            anchors.leftMargin: CuteUI.Units.smallSpacing
-            anchors.rightMargin: CuteUI.Units.smallSpacing
+            anchors.topMargin: LingmoUI.Units.smallSpacing
+            anchors.leftMargin: LingmoUI.Units.smallSpacing
+            anchors.rightMargin: LingmoUI.Units.smallSpacing
             fillMode: Image.PreserveAspectFit
             visible: status === Image.Ready
             horizontalAlignment: Qt.AlignHCenter
@@ -147,7 +147,7 @@ Item {
             id: _selectedColorOverlay
             anchors.fill: _iconItem
             source: _iconItem
-            color: CuteUI.Theme.highlightColor
+            color: LingmoUI.Theme.highlightColor
             opacity: 0.5
             visible: control.selected
         }
@@ -167,28 +167,28 @@ Item {
         z: 2
         anchors.top: _iconItem.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: CuteUI.Units.smallSpacing
+        anchors.topMargin: LingmoUI.Units.smallSpacing
         maximumLineCount: control.selected ? 3 : 2
         horizontalAlignment: Text.AlignHCenter
-        width: parent.width - CuteUI.Units.largeSpacing * 2 - CuteUI.Units.smallSpacing
+        width: parent.width - LingmoUI.Units.largeSpacing * 2 - LingmoUI.Units.smallSpacing
         textFormat: Text.PlainText
         elide: Qt.ElideRight
         wrapMode: Text.Wrap
         text: control.fileName
         color: control.GridView.view.isDesktopView ? "white"
-                                                   : selected ? CuteUI.Theme.highlightColor
-                                                              : CuteUI.Theme.textColor
+                                                   : selected ? LingmoUI.Theme.highlightColor
+                                                              : LingmoUI.Theme.textColor
         opacity: model.isHidden ? 0.8 : 1.0
     }
 
     Rectangle {
         z: 1
-        x: _label.x + (_label.width - _label.paintedWidth) / 2 - (CuteUI.Units.smallSpacing / 2)
+        x: _label.x + (_label.width - _label.paintedWidth) / 2 - (LingmoUI.Units.smallSpacing / 2)
         y: _label.y
-        width: _label.paintedWidth + CuteUI.Units.smallSpacing
+        width: _label.paintedWidth + LingmoUI.Units.smallSpacing
         height: _label.paintedHeight
         radius: 4
-        color: CuteUI.Theme.highlightColor
+        color: LingmoUI.Theme.highlightColor
 
         opacity: {
             if (control.selected && control.GridView.view.isDesktopView)
@@ -211,7 +211,7 @@ Item {
         z: 1
         horizontalOffset: 1
         verticalOffset: 1
-        radius: Math.round(4 * CuteUI.Units.devicePixelRatio)
+        radius: Math.round(4 * LingmoUI.Units.devicePixelRatio)
         samples: radius * 2 + 1
         spread: 0.35
         color: Qt.rgba(0, 0, 0, 0.3)

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
  *
@@ -21,19 +21,19 @@ import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
-import CuteUI 1.0 as CuteUI
+import LingmoUI 1.0 as LingmoUI
 
 Item {
     id: control
 
     property string url: main.url
 
-    width: 400 + CuteUI.Units.largeSpacing * 2
-    height: _mainLayout.implicitHeight + CuteUI.Units.largeSpacing * 2
+    width: 400 + LingmoUI.Units.largeSpacing * 2
+    height: _mainLayout.implicitHeight + LingmoUI.Units.largeSpacing * 2
 
     Rectangle {
         anchors.fill: parent
-        color: CuteUI.Theme.secondBackgroundColor
+        color: LingmoUI.Theme.secondBackgroundColor
     }
 
     Component.onCompleted: {
@@ -71,8 +71,8 @@ Item {
             clip: true
             ScrollBar.vertical: ScrollBar {}
 
-            leftMargin: CuteUI.Units.smallSpacing
-            rightMargin: CuteUI.Units.smallSpacing
+            leftMargin: LingmoUI.Units.smallSpacing
+            rightMargin: LingmoUI.Units.smallSpacing
 
             cellHeight: {
                 var extraHeight = calcExtraSpacing(80, listView.Layout.preferredHeight - topMargin - bottomMargin)
@@ -115,22 +115,22 @@ Item {
 
                 Rectangle {
                     anchors.fill: parent
-                    anchors.margins: CuteUI.Units.smallSpacing
-                    radius: CuteUI.Theme.mediumRadius
-                    color: isSelected ? CuteUI.Theme.highlightColor
-                                      : mouseArea.containsMouse ? Qt.rgba(CuteUI.Theme.textColor.r,
-                                                                          CuteUI.Theme.textColor.g,
-                                                                          CuteUI.Theme.textColor.b,
+                    anchors.margins: LingmoUI.Units.smallSpacing
+                    radius: LingmoUI.Theme.mediumRadius
+                    color: isSelected ? LingmoUI.Theme.highlightColor
+                                      : mouseArea.containsMouse ? Qt.rgba(LingmoUI.Theme.textColor.r,
+                                                                          LingmoUI.Theme.textColor.g,
+                                                                          LingmoUI.Theme.textColor.b,
                                                                           0.1) : "transparent"
                     smooth: true
                 }
 
                 ColumnLayout {
                     anchors.fill: parent
-                    anchors.margins: CuteUI.Units.smallSpacing
-                    spacing: CuteUI.Units.smallSpacing
+                    anchors.margins: LingmoUI.Units.smallSpacing
+                    spacing: LingmoUI.Units.smallSpacing
 
-                    CuteUI.IconItem {
+                    LingmoUI.IconItem {
                         id: icon
                         Layout.preferredHeight: 36
                         Layout.preferredWidth: height
@@ -144,7 +144,7 @@ Item {
                         elide: Text.ElideMiddle
                         Layout.alignment: Qt.AlignHCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        color: isSelected ? CuteUI.Theme.highlightedTextColor : CuteUI.Theme.textColor
+                        color: isSelected ? LingmoUI.Theme.highlightedTextColor : LingmoUI.Theme.textColor
                     }
                 }
             }
@@ -157,15 +157,15 @@ Item {
             enabled: listView.count >= 1
             padding: 0
 
-            Layout.leftMargin: CuteUI.Units.largeSpacing
-            Layout.bottomMargin: CuteUI.Units.largeSpacing
+            Layout.leftMargin: LingmoUI.Units.largeSpacing
+            Layout.bottomMargin: LingmoUI.Units.largeSpacing
         }
 
         RowLayout {
-            spacing: CuteUI.Units.largeSpacing
-            Layout.leftMargin: CuteUI.Units.largeSpacing
-            Layout.rightMargin: CuteUI.Units.largeSpacing
-            Layout.bottomMargin: CuteUI.Units.largeSpacing
+            spacing: LingmoUI.Units.largeSpacing
+            Layout.leftMargin: LingmoUI.Units.largeSpacing
+            Layout.rightMargin: LingmoUI.Units.largeSpacing
+            Layout.bottomMargin: LingmoUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

@@ -20,9 +20,9 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
-import Cute.FileManager 1.0
-import Cute.DragDrop 1.0 as DragDrop
-import CuteUI 1.0 as CuteUI
+import Lingmo.FileManager 1.0
+import Lingmo.DragDrop 1.0 as DragDrop
+import LingmoUI 1.0 as LingmoUI
 
 GridView {
     id: control
@@ -258,7 +258,7 @@ GridView {
     }
 
     cellHeight: {
-        var iconHeight = iconSize + (CuteUI.Units.fontMetrics.height * 2) + CuteUI.Units.largeSpacing * 2
+        var iconHeight = iconSize + (LingmoUI.Units.fontMetrics.height * 2) + LingmoUI.Units.largeSpacing * 2
         if (isDesktopView) {
             var extraHeight = calcExtraSpacing(iconHeight, control.height - topMargin - bottomMargin)
             return iconHeight + extraHeight
@@ -267,7 +267,7 @@ GridView {
     }
 
     cellWidth: {
-        var iconWidth = iconSize + CuteUI.Units.largeSpacing * 4
+        var iconWidth = iconSize + LingmoUI.Units.largeSpacing * 4
         var extraWidth = calcExtraSpacing(iconWidth, control.width - leftMargin - rightMargin)
         return iconWidth + extraWidth
     }
@@ -276,7 +276,7 @@ GridView {
     currentIndex: -1
     ScrollBar.vertical: ScrollBar { }
 
-    CuteUI.WheelHandler {
+    LingmoUI.WheelHandler {
         target: control
     }
 
@@ -534,8 +534,8 @@ GridView {
         var step = rows ? cellWidth : cellHeight
         var perStripe = Math.floor(axis / step)
         var stripes = Math.ceil(control.count / perStripe)
-        var cWidth = control.cellWidth - (2 * CuteUI.Units.smallSpacing)
-        var cHeight = control.cellHeight - (2 * CuteUI.Units.smallSpacing)
+        var cWidth = control.cellWidth - (2 * LingmoUI.Units.smallSpacing)
+        var cHeight = control.cellHeight - (2 * LingmoUI.Units.smallSpacing)
         var midWidth = control.cellWidth / 2
         var midHeight = control.cellHeight / 2
         var indices = []
@@ -563,7 +563,7 @@ GridView {
 
                 // Check if the rubberband intersects this cell first to avoid doing more
                 // expensive work.
-                if (control.rubberBand.intersects(Qt.rect(itemX + CuteUI.Units.smallSpacing, itemY + CuteUI.Units.smallSpacing,
+                if (control.rubberBand.intersects(Qt.rect(itemX + LingmoUI.Units.smallSpacing, itemY + LingmoUI.Units.smallSpacing,
                     cWidth, cHeight))) {
                     var item = control.contentItem.childAt(itemX + midWidth, itemY + midHeight)
 
@@ -642,8 +642,8 @@ GridView {
             visible: false
             wrapMode: TextEdit.Wrap
             horizontalAlignment: TextEdit.AlignHCenter
-            topPadding: CuteUI.Units.smallSpacing
-            bottomPadding: CuteUI.Units.smallSpacing
+            topPadding: LingmoUI.Units.smallSpacing
+            bottomPadding: LingmoUI.Units.smallSpacing
             z: 999
 
             property Item targetItem: null
@@ -651,10 +651,10 @@ GridView {
             onTargetItemChanged: {
                 if (targetItem != null) {
                     var pos = control.mapFromItem(targetItem, targetItem.labelArea.x, targetItem.labelArea.y)
-                    width = targetItem.width - CuteUI.Units.smallSpacing
-                    height = targetItem.labelArea.paintedHeight + CuteUI.Units.largeSpacing * 2
+                    width = targetItem.width - LingmoUI.Units.smallSpacing
+                    height = targetItem.labelArea.paintedHeight + LingmoUI.Units.largeSpacing * 2
                     x = targetItem.x + Math.abs(Math.min(control.contentX, control.originX))
-                    y = pos.y - CuteUI.Units.smallSpacing
+                    y = pos.y - LingmoUI.Units.smallSpacing
                     text = targetItem.labelArea.text
                     targetItem.labelArea.visible = false
                     _editor.select(0, dirModel.fileExtensionBoundary(targetItem.index))

@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
- * Author:     Reion Wong <reion@cuteos.com>
+ * Author:     Reion Wong <reion@lingmoos.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,9 +33,9 @@ DockDBusInterface *DockDBusInterface::self()
 
 DockDBusInterface::DockDBusInterface(QObject *parent)
     : QObject(parent)
-    , m_dockInterface("com.cute.Dock",
+    , m_dockInterface("com.lingmo.Dock",
                     "/Dock",
-                    "com.cute.Dock", QDBusConnection::sessionBus())
+                    "com.lingmo.Dock", QDBusConnection::sessionBus())
     , m_leftMargin(0)
     , m_rightMargin(0)
     , m_bottomMargin(0)
@@ -46,7 +46,7 @@ DockDBusInterface::DockDBusInterface(QObject *parent)
         connect(&m_dockInterface, SIGNAL(directionChanged()), this, SLOT(updateMargins()));
         connect(&m_dockInterface, SIGNAL(visibilityChanged()), this, SLOT(updateMargins()));
     } else {
-        QDBusServiceWatcher *watcher = new QDBusServiceWatcher("com.cute.Dock",
+        QDBusServiceWatcher *watcher = new QDBusServiceWatcher("com.lingmo.Dock",
                                                                QDBusConnection::sessionBus(),
                                                                QDBusServiceWatcher::WatchForUnregistration,
                                                                this);

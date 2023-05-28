@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -21,13 +21,13 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-import CuteUI 1.0 as CuteUI
+import LingmoUI 1.0 as LingmoUI
 
 Item {
     id: control
 
-    property int widthValue: _mainLayout.implicitWidth + CuteUI.Units.largeSpacing * 3
-    property int heightValue: _mainLayout.implicitHeight + CuteUI.Units.largeSpacing * 3
+    property int widthValue: _mainLayout.implicitWidth + LingmoUI.Units.largeSpacing * 3
+    property int heightValue: _mainLayout.implicitHeight + LingmoUI.Units.largeSpacing * 3
 
     width: widthValue
     height: heightValue
@@ -41,7 +41,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: CuteUI.Theme.secondBackgroundColor
+        color: LingmoUI.Theme.secondBackgroundColor
     }
 
     onVisibleChanged: {
@@ -62,16 +62,16 @@ Item {
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
-        anchors.leftMargin: CuteUI.Units.largeSpacing * 1.5
-        anchors.rightMargin: CuteUI.Units.largeSpacing * 1.5
-        anchors.topMargin: CuteUI.Units.smallSpacing
-        anchors.bottomMargin: CuteUI.Units.largeSpacing * 1.5
-        spacing: CuteUI.Units.largeSpacing
+        anchors.leftMargin: LingmoUI.Units.largeSpacing * 1.5
+        anchors.rightMargin: LingmoUI.Units.largeSpacing * 1.5
+        anchors.topMargin: LingmoUI.Units.smallSpacing
+        anchors.bottomMargin: LingmoUI.Units.largeSpacing * 1.5
+        spacing: LingmoUI.Units.largeSpacing
 
         RowLayout {
-            spacing: CuteUI.Units.largeSpacing * 2
+            spacing: LingmoUI.Units.largeSpacing * 2
 
-            CuteUI.IconItem {
+            LingmoUI.IconItem {
                 width: 64
                 height: 64
                 source: main.iconName
@@ -89,8 +89,8 @@ Item {
 
         GridLayout {
             columns: 2
-            columnSpacing: CuteUI.Units.largeSpacing
-            rowSpacing: CuteUI.Units.largeSpacing
+            columnSpacing: LingmoUI.Units.largeSpacing
+            rowSpacing: LingmoUI.Units.largeSpacing
             Layout.alignment: Qt.AlignTop
 
             onHeightChanged: updateWindowSize()
@@ -99,7 +99,7 @@ Item {
             Label {
                 text: qsTr("Type:")
                 Layout.alignment: Qt.AlignRight
-                color: CuteUI.Theme.disabledTextColor
+                color: LingmoUI.Theme.disabledTextColor
                 visible: mimeType.visible
             }
 
@@ -112,7 +112,7 @@ Item {
             Label {
                 text: qsTr("Location:")
                 Layout.alignment: Qt.AlignRight
-                color: CuteUI.Theme.disabledTextColor
+                color: LingmoUI.Theme.disabledTextColor
             }
 
             Label {
@@ -123,7 +123,7 @@ Item {
             Label {
                 text: qsTr("Size:")
                 Layout.alignment: Qt.AlignRight
-                color: CuteUI.Theme.disabledTextColor
+                color: LingmoUI.Theme.disabledTextColor
             }
 
             Label {
@@ -134,7 +134,7 @@ Item {
             Label {
                 text: qsTr("Created:")
                 Layout.alignment: Qt.AlignRight
-                color: CuteUI.Theme.disabledTextColor
+                color: LingmoUI.Theme.disabledTextColor
                 visible: creationTime.visible
             }
 
@@ -147,7 +147,7 @@ Item {
             Label {
                 text: qsTr("Modified:")
                 Layout.alignment: Qt.AlignRight
-                color: CuteUI.Theme.disabledTextColor
+                color: LingmoUI.Theme.disabledTextColor
                 visible: modifiedTime.visible
             }
 
@@ -160,7 +160,7 @@ Item {
             Label {
                 text: qsTr("Accessed:")
                 Layout.alignment: Qt.AlignRight
-                color: CuteUI.Theme.disabledTextColor
+                color: LingmoUI.Theme.disabledTextColor
                 visible: accessTime.visible
             }
 
@@ -172,12 +172,12 @@ Item {
         }
 
         Item {
-            height: CuteUI.Units.smallSpacing
+            height: LingmoUI.Units.smallSpacing
         }
 
         RowLayout {
             Layout.alignment: Qt.AlignRight
-            spacing: CuteUI.Units.largeSpacing
+            spacing: LingmoUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

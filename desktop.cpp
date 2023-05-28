@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CuteOS Team.
+ * Copyright (C) 2021 LingmoOS Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
  *
@@ -31,11 +31,11 @@ Desktop::Desktop(int& argc, char** argv)
     for (QScreen *screen : QGuiApplication::screens()) {
         screenAdded(screen);
     }
-    setOrganizationName("cuteos");
-    setApplicationName("cute-desktop");
+    setOrganizationName("lingmoos");
+    setApplicationName("ling-desktop");
 
     QLocale locale;
-    QString qmFilePath = QString("%1/%2.qm").arg("/usr/share/cute-filemanager/translations/").arg(locale.name());
+    QString qmFilePath = QString("%1/%2.qm").arg("/usr/share/ling-filemanager/translations/").arg(locale.name());
     if (QFile::exists(qmFilePath)) {
         QTranslator *translator = new QTranslator(this);
         if (translator->load(qmFilePath)) {

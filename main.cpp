@@ -1,3 +1,4 @@
+//2023-04-25-01:07
 #include "desktop.h"
 #include "desktop/desktopsettings.h"
 #include <QApplication>
@@ -8,7 +9,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
 
     // Register QML Type.
-    const char *uri = "Cute.Desktop";
+    const char *uri = "Lingmo.Desktop";
 
     qmlRegisterType<DesktopSettings>(uri, 1, 0, "DesktopSettings");
 
