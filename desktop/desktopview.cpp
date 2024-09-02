@@ -36,8 +36,13 @@ DesktopView::DesktopView(QScreen *screen, QQuickView *parent)
 {
     m_screenRect = m_screen->geometry();
 
+    this->setFlag(Qt::FramelessWindowHint);
+    this->setColor(QColor(Qt::transparent));
+	
     KWindowSystem::setType(winId(), NET::Desktop);
     KWindowSystem::setState(winId(), NET::KeepBelow);
+	
+	QWindow::fromWinId(winId())->setOpacity(0.99);
 
     engine()->rootContext()->setContextProperty("desktopView", this);
     engine()->rootContext()->setContextProperty("Dock", DockDBusInterface::self());
